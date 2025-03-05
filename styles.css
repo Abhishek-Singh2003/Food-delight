@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    position: relative; /* Ensure content sits above video */
+    color: #333; /* Ensure text visibility over video */
+}
+
+/* Video Background */
+.background-video {
+    position: fixed; /* Fixes video in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video scales responsively */
+    z-index: -1; /* Places video behind all content */
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Above video */
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.nav-links a.active {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: rgb(229 146 146 / 80%);
+    margin: 2rem;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Menu Section */
+.menu {
+    padding: 2rem;
+    text-align: center;
+}
+
+.menu h1 {
+    color: #544b57; /* Ensure visibility over video */
+    font-weight: bolder;
+    font-size: 43px;
+    font-family: ui-sans-serif;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.menu-item {
+    background-color: rgb(229 146 146 / 80%); /* Adjusted opacity syntax */
+    padding: 1rem;
+    border-radius: 50px;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 30px;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item p {
+    font-size: 22px;
+    margin: 11px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact h1 {
+    color: #544b57; /* Ensure visibility over video */
+    font-weight: bolder;
+    font-size: 43px;
+    font-family: ui-sans-serif;
+
+    }
+
+.contact-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgb(229 146 146 / 80%);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Above video */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(51, 51, 51, 0.9);
+        flex-direction: column;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .menu-item img {
+        height: 120px;
+    }
+}
